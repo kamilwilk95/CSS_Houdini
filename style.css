@@ -1,0 +1,94 @@
+/*
+  Global style
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #212121;
+  text-align: center;
+  margin: 0;
+}
+
+section {
+  padding-bottom: 40px;
+  border-bottom: 2px solid firebrick;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+section::nth-child(2) {
+  border-bottom: none;
+}
+
+/*
+  Section for CSS.registerProperty 
+*/
+
+.btn {
+  background: none;
+  border: none;
+  padding: 30px 60px;
+  font-size: 20px;
+  border-radius: 8px;
+  background-image: linear-gradient(60deg, var(--btn-first-color), var(--btn-gradient-length), var(--btn-second-color));
+  cursor: pointer;
+  outline: 0;
+  transition: --btn-first-color 300ms ease-in-out, --btn-second-color 300ms ease-in-out, color 300ms ease-in-out, --btn-gradient-length 300ms;
+}
+
+.btn:hover {
+  --btn-first-color: #43a047;
+  --btn-second-color: #212121;
+  --btn-gradient-length: 85%;
+  color: #fff;
+}
+
+/*
+  Section for paint
+*/
+
+loader {
+  font-size: 26px;
+  padding-right: 50px;
+  background-image: paint(loaderPoints);
+  animation: animateDotOne 2.6s infinite, animateDotTwo 2.6s 0.3s infinite, animateDotThree 2.6s 0.6s infinite;
+}
+
+@keyframes animateDotOne {
+  0% {--dotOneHeight: 100%;}
+  35% {--dotOneHeight: 50%;}
+  100% {--dotOneHeight: 100%;}
+}
+
+@keyframes animateDotTwo {
+  0% {--dotTwoHeight: 100%;}
+  35% {--dotTwoHeight: 50%;}
+  100% {--dotTwoHeight: 100%;}
+}
+
+@keyframes animateDotThree {
+  0% {--dotThreeHeight: 100%;}
+  35% {--dotThreeHeight: 50%;}
+  100% {--dotThreeHeight: 100%;}
+}
+
+section.animation {
+  height: 100vh;
+  background: #4fc3f7;
+  position: relative;
+}
+
+section.animation div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+}
